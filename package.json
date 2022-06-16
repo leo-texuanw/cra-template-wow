@@ -1,0 +1,26 @@
+{
+  "name": "cra-template-wow",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf ./wow.ui && yarn create react-app wow.ui --template file:.",
+    "lint": "eslint .",
+    "prettier": "prettier .",
+    "format": "yarn prettier -- --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "eslint": "^8.17.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1"
+  }
+}
