@@ -1,0 +1,112 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "import",
+    "jest-dom",
+    "prefer-arrow"
+  ],
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+    // "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es2021": true,
+    "node": true
+  },
+  "rules": {
+    // Make prettier code formatting suggestions more verbose.
+    // "prettier/prettier": ["warn"],
+    "import/extensions": "off",
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow",
+        "selector": "default",
+        "trailingUnderscore": "allow"
+      },
+      {
+        "format": null,
+        "selector": "objectLiteralProperty"
+      },
+      {
+        "format": null,
+        "selector": "objectLiteralMethod"
+      },
+      {
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "forbid",
+        "selector": "memberLike",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow",
+        "selector": "variableLike",
+        "trailingUnderscore": "allow"
+      },
+      {
+        "format": ["PascalCase"],
+        "selector": "typeLike"
+      },
+      {
+        "format": ["PascalCase", "UPPER_CASE"],
+        "selector": "enum"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "internal",
+            "pattern": "~*"
+          },
+          {
+            "group": "internal",
+            "pattern": "~**/*"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "jest/no-restricted-matchers": [
+      "error",
+      {
+        "not.toHaveBeenCalledWith": "use toHaveBeenCalledTimes(0), you can't check parameters called if it has not been called",
+        "resolves": "Use `expect(await promise)` instead.",
+        "toBeFalsy": "This performs a type conversion use toBe(false) instead",
+        "toBeTruthy": "This performs a type conversion use toBe(true) instead"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "ecmaVersion": 12,
+        "project": ["tsconfig.json"]
+      }
+    }
+  ]
+}

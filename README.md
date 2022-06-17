@@ -1,19 +1,23 @@
-# cra-template-leo
+# cra-template-wow
 
 A custom template for React App.
 
 ## What's included?
 
-## How to use the template
+- Typescript
+- Jest
+- Eslint
+
+## Testing template locally
 
 ```
-npx create-react-app my-app --template file:../path/to/cra-template-leo
+npx create-react-app my-app --template file:../path/to/cra-template-wow
 ```
 
 or
 
 ```
-yarn create react-app my-app --template file:../path/to/cra-template-leo
+yarn create react-app my-app --template file:../path/to/cra-template-wow
 ```
 
 ## Resource
