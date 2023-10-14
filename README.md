@@ -5,19 +5,20 @@ A custom template for React App.
 ## What's included?
 
 - Typescript
+- Redux toolkit
 - Jest
 - Eslint
 
 ## Testing template locally
 
 ```
-npx create-react-app my-app --template file:../path/to/cra-template-wow
+npx create-react-app my-app --template file:<./path/to/cra-template-wow>
 ```
 
 or
 
 ```
-yarn create react-app my-app --template file:../path/to/cra-template-wow
+yarn create react-app my-app --template file:<./path/to/cra-template-wow>
 ```
 
 ## Resource

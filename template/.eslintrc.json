@@ -10,10 +10,12 @@
     "prefer-arrow"
   ],
   "extends": [
+    "eslint:recommended",
+    "plugin:react/jsx-runtime",
     "plugin:jest/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-    // "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
   ],
   "env": {
     "browser": true,
@@ -98,14 +100,23 @@
         "toBeFalsy": "This performs a type conversion use toBe(false) instead",
         "toBeTruthy": "This performs a type conversion use toBe(true) instead"
       }
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
     ]
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "ecmaVersion": 12,
-        "project": ["tsconfig.json"]
+        "ecmaVersion": "latest",
+        "project": ["tsconfig.json"],
+        "sourceType": "module"
       }
     }
   ]

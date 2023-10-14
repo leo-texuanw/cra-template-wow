@@ -22,9 +22,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "sourceMap": true
   },
-  "include": ["src"],
+  "include": ["src/"],
   "exclude": ["**/coverage/*", "**/build/*", "**/node_module/*"]
 }
